@@ -59,16 +59,41 @@ section {
 /* ---------------------------------------------- */
 
 .address {
+    background: #221c12;
+    color: #fffdf0;
+    text-align: center;
+
     /* TODO give this section a background of #221c12 and a color of #fffdf0. make the text centered */
+}
+.address:after {
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+    content: "";
+}
+
+.row {
+
 }
 
 .location,
 .hours {
     /* TODO give these two divs some padding so that they line up with the map */
+    /*float:left;*/
+    padding: 3em;
+    margin: 0px;
 }
 
-.hours-label { /* TODO style these with the appropriate font styles (bold/italic) */ }
+.hours-label { 
+font-style: bold italic;
+/* TODO style these with the appropriate font styles (bold/italic) */ }
 .hours-value { /* TODO style these with the appropriate font styles (bold/italic) */ }
+
+.map {
+    margin: 0px;
+    
+}
 
 
 
