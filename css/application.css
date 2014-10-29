@@ -6,14 +6,17 @@ body {
     margin: 0;
     /* TODO use the Google Font 'Bitter' */
     font-size: 100%;
+    font-family: Bitter;
 }
 
 div, h1, h2, h3, h4, h5, h6, p, ul, ol, a {
     /* TODO because we are using Foundation, we have to override Foundation's default font family. Use the Google Font 'Bitter' here. */
+    font-family: Bitter;
 }
 
 h1, h2, h3, h4, h5, h6 {
     /* TODO make the font color of all our headers #fffdf0 */
+    color: #fffdf0;
 }
 
 /* ---------------------------------------------- */
@@ -24,20 +27,30 @@ header {}
 
 header h1 {
     /* TODO make the font size larger than Foundation's default; I uesd 4.5em */
+    font-size: 4.5em;
     /* TODO add a text-shadow on the h1 using rgba(34, 28, 18,.75) */
+    text-shadow: 2px 2px rgba(34, 28, 18,.75);
 }
 
 header .tagline h4 {
     /* TODO make the tagline italic; you'll have to work hard to override Foundation's font-style: normal on all headers! */
+    font-style: italic;
     /* TODO add the same text-shadow */
+    text-shadow: 2px 2px rgba(34, 28, 18,.75);
+
 }
 
 header .tagline {
-    /* TODO center the text */
+    text-align: center;
     background: rgba(34, 28, 18,.5); /* I added this transparent background bar for you. */
     /* TODO add some padding to give it space around the text */
+    padding: 3em;
     /* TODO absolutely position the tagline bar at top: 35%. add a width so that it goes all the way across. */
+    position: absolute;
+    top: 35%;
+    width: 100%;
     /* TODO when you make the slideshow work, the tagline will get hidden. why? what line of CSS do you have to write to make it appear ABOVE the slideshow? */
+    z-index: 1;
 }
 
 
@@ -49,7 +62,7 @@ header .tagline {
 
 section {
     padding: 2em;
-    background: #ccc;
+    background: #cccccc;
     line-height: 1.5em;
 }
 
@@ -87,8 +100,12 @@ section {
 
 .hours-label { 
 font-style: bold italic;
-/* TODO style these with the appropriate font styles (bold/italic) */ }
-.hours-value { /* TODO style these with the appropriate font styles (bold/italic) */ }
+/* TODO style these with the appropriate font styles (bold/italic) */ 
+
+}
+.hours-value { 
+/* TODO style these with the appropriate font styles (bold/italic) */ 
+}
 
 .map {
     margin: 0px;
@@ -103,31 +120,49 @@ font-style: bold italic;
 
 .menu {
     /* TODO give this section a color of #221c12 and a background of #fffdf0. give it some bottom padding so there's space below the text. */
+    padding-bottom: 2em;
+    color: #221c12;
+    background: #fffdf0;
+}
+.menu:after {
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+    content: "";
 }
 
 .menu h2 {
     /* TODO make this font size larger than the Foundation default */
+    font-size: 3em;
+    text-align: center;
 }
 
 .menu h2, .menu h3, .menu h4 {
     /* TODO give these headers a color of #221c12 */
+    color: #221c12
 }
 
-
 /* TODO center the text of the h2 and menu-section */
+.menu-section h2 {
+    text-align: center;
+}
 
 .menu-section h3 a {
     /* TODO make menu section links a semi-transparent color rgba(34, 28, 18, .75). give them a 3px bottom border and give it a bit of space */
     /* TODO give the menu section links a CSS transition so that when you hover them, the color fades in slowly */
+    color: rgba(34, 28, 18, .75);
+    border-bottom: 3px;
 }
 
 
 /* TODO on the menu section links, when hovered, make them the same color but 100% opacity instead of 75% (.75) and make the bottom border the same color. */
 
+
 /* TODO on the ACTIVE menu section links, make them look the same as hovered ones. How do you know if they are active? */
 
 .menu-section-content {
-    /* TODO give this some space below the menu links */
+    /* TODO give this some space below the menu links */ 
 }
 
 
@@ -139,8 +174,13 @@ font-style: bold italic;
 
 /* TODO style the menu-item-ingredients to be italic and be in one line with the price. You don't need to use Foundation classes to do this, but if you want to try and see, go for it! */
 
-/* TODO style the menu-item-price to be bold, 50% opacity, in line with the description but have some space to the left of it. */
 
+/* TODO style the menu-item-price to be bold, 50% opacity, in line with the description but have some space to the left of it. */
+.menu-item-price {
+    font-style: bold;
+    opacity: 50%;
+    diplay: inline;
+}
 
 .menu-item-name-no-description {
     display:inline;

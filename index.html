@@ -26,8 +26,10 @@
         <!-- Slick.js CSS -->
         <!-- you do not have to edit this file ever. -->
         <link rel="stylesheet" href="css/slides.css">
+            
 
     </head>
+        
     <body>
 
         <!-- Slide/Header Image -->
@@ -105,12 +107,22 @@
                 One of them is active in the mockup. Which one? What kind of classname would you add to show that it is active?
 
                 -->
-                <div class="menu-section" id="breakfast">
+
+                <!-- TODO later we will write JavaScript to toggle the menu sections, using this link -->
+                <!-- add a class of "menu-section-item" and an ID with the section of the menu that this is, e.g. dinner, breakfast, etc. -->
+                <!-- TODO name of menu section -->
+                <div class="menu-section-item" id="dinner">
                     <h3>
-                        <!-- TODO later we will write JavaScript to toggle the menu sections, using this link -->
-                        <!-- add a class of "menu-section-item" and an ID with the section of the menu that this is, e.g. dinner, breakfast, etc. -->
                         <a href="#">
-                            <!-- TODO name of menu section -->
+                            Dinner
+                        </a>
+                    </h3>
+                </div>
+
+                <div class="menu-section-item" id="wine">
+                    <h3>
+                        <a href="#" >
+                            Wine
                         </a>
                     </h3>
                 </div>
@@ -169,13 +181,28 @@
         <!-- JavaScripts -->
 
         <!-- jQuery -->
+        <!-- Only need to load jquery stuff once -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+        
 
         <!-- Our JS -->
         <!-- TODO link to our script.js file -->
+        <script src="js/script.js"></script>
 
         <!-- Slick.js Slideshow -->
         <!-- TODO link to the slick.min.js file -->
+        <script src="js/slick.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#slides').slick({
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    dots: true,
+                    fade:true
+                    });
+                });
+        </script>
         <!-- TODO pass the div #slides into the .slick() function to make the slideshow work. you'll be able to tell if it works because the images will no longer be a stack; you'll only see the first one. -->
         <!-- TODO by default this slideshow JS doesn't autoplay. can you add the following settings into the slick() function? autoplay: true, autoplaySpeed: 2000, fade: true, cssEase: 'linear'. Check out the http://kenwheeler.github.io/slick/ website for examples and how to's! -->
 

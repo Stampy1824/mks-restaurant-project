@@ -21,17 +21,19 @@ $(function() {
       event.preventDefault();
 
       // Assign the id of the clicked element (this) to a variable named id
-      var  = $( this );
+      var id = $( this );
+      console.log(id);
 
       // Remove the class 'is-active' from all menu item headings
-      $( '' ).removeClass( '' );
-
+      $( '.menu-section-item' ).removeClass( '.is-active');
+      
       // Add 'is-active' to this specific action that was clicked (this). is-active
       // provides the visual cue for what's active via CSS
-      $( this ).addClass( '' );
+      $(this).addClass( '.is-active' );
 
       // Once you're started with TODO #2, call the getMenu function here,
       // passing id as the argument
+      getMenu ($(this).attr('id'));
 
     });
 
@@ -52,8 +54,8 @@ $(function() {
 
     function getMenu( course ) {
      // Use `$.getJSON` to get the menu for whatever menu heading was clicked
-     $.getJSON( './json/menu-' + course + '.json', function( json ) {
-       populateMenu( json );
+     $.getJSON( './json/menu-' + course + '.json', function(json) {
+       populateMenu(json);
        // Once you're started with TODO #3, call the populateMenu function here
        // and pass json as the argument
      });
@@ -66,10 +68,11 @@ $(function() {
 
     function populateMenu( json ) {
       html = '';
+      console.log(json)
 
       // start a for loop that iterates through json.length
       // add json.length into this for loop code
-      for( var i = 0; i < ; i++ ){
+      for( var i = 0; i < json.length; i++ ){
         // wrap each section in a menu-group div
         html += '<div class="menu-group columns small-12 medium-4">';
         // append inside the menu-group div a h4 with the json section name in it
@@ -84,9 +87,9 @@ $(function() {
           html += '<div class="menu-item">';
           // inside each menu-item div, create a div for dish, ingredients, and price
           // add json[i]content[j].THING where THING is dish, ingredient, price.
-          html += '<div class="menu-item-dish">' + json[i].content[j]. + '</div>';
-          html += '<p class="menu-item-ingredients">' + json[i].content[j]. + '</p>';
-          html += '<div class="menu-item-price">' + json[i].content[j]. + '</div>';
+          html += '<div class="menu-item-dish">' + json[i].content[j].dish + '</div>';
+          html += '<p class="menu-item-ingredients">' + json[i].content[j].ingredient + '</p>';
+          html += '<div class="menu-item-price">' + json[i].content[j].price + '</div>';
           html += '</div>';
         }
 
@@ -94,7 +97,7 @@ $(function() {
       }
 
       // Use `.html` to replace the contents of `.menu-section-content`
-      $( '.menu-section-content' ).html( html );
+      $( '.menu-section-content' ).html(html);
     }
 
 
